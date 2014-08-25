@@ -16,16 +16,19 @@ public class FacePamphletProfile implements FacePamphletConstants {
 	/** 
 	 * Constructor
 	 * This method takes care of any initialization needed for
-	 * the profile.
+	 * the profile. Creates a new face pamphlet profile with a name, 
+	/* an empty picture, an empty status and no friends.
 	 */
 	public FacePamphletProfile(String name) {
-		// You fill this in
+		profileName = name;
+		status = " ";
+		profilePicture = new GImage(DEFAULT_PROFILE_PICTURE);
+		
 	}
 
 	/** This method returns the name associated with the profile. */ 
 	public String getName() {
-		// You fill this in.  Currently always returns the empty string.
-		return "";
+		return profileName;
 	}
 
 	/** 
@@ -34,7 +37,7 @@ public class FacePamphletProfile implements FacePamphletConstants {
 	 * returns null. */ 
 	public GImage getImage() {
 		// You fill this in.  Currently always returns null.
-		return null;
+		return profilePicture;
 	}
 
 	/** This method sets the image associated with the profile. */ 
@@ -108,5 +111,9 @@ public class FacePamphletProfile implements FacePamphletConstants {
 		// You fill this in.  Currently always returns the empty string.
 		return "";
 	}
+
 	
+	private String profileName;
+	private String status;
+	private GImage profilePicture;
 }
