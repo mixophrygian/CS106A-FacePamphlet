@@ -70,6 +70,25 @@ public class FacePamphlet extends ConsoleProgram
      */
     public void actionPerformed(ActionEvent e) {
 		// You fill this in as well as add any additional methods
+    	Object source = e.getSource();
+    	if (source == Add) {
+    		println("Add: " + nameField.getText() + ".");
+    	}
+    	if (source == Delete){
+    		println("Delete: " + nameField.getText() + ".");
+    	}
+    	if(source == Lookup){
+    		println("Look up: " + nameField.getText() + ".");
+    	}
+    	if(source == statusField || source == ChangeStatus){
+    		println("Status: " + statusField.getText() + ".");
+    	}
+    	if(source == pictureField || source == ChangePicture){
+    		println("Picture: " + pictureField.getText() + "");
+    	}
+    	if(source == friendField || source == AddFriend){
+    		println("Add friend: " + friendField.getText() + "");
+    	}
 	}
 
     
