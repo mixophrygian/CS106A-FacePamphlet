@@ -55,6 +55,7 @@ public class FacePamphlet extends Program
 		AddFriend = new JButton("Add Friend");
 		add(AddFriend, WEST);
 		
+		canvas = new FacePamphletCanvas();
 		add(canvas);
 		
 		addActionListeners();
