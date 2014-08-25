@@ -20,7 +20,19 @@ public class FacePamphlet extends Program
 	 * initialization that needs to be performed.
 	 */
 	public void init() {
-		// You fill this in
+		// Adds interactors to the top and left side of the window//
+		add(new JLabel("Name"), NORTH);
+		textField = new JTextField(TEXT_FIELD_SIZE);
+		textField.addActionListener(this);
+		add(textField, NORTH);
+		Add = new JButton ("Add");
+		Delete = new JButton ("Delete");
+		Lookup = new JButton ("Lookup");
+		add(Add, NORTH);
+		add(Delete, NORTH);
+		add(Lookup, NORTH);
+		
+		addActionListeners();
     }
     
   
@@ -33,4 +45,9 @@ public class FacePamphlet extends Program
 		// You fill this in as well as add any additional methods
 	}
 
+    
+	private JTextField textField;
+	private JButton Add;
+	private JButton Delete;
+	private JButton Lookup;
 }
