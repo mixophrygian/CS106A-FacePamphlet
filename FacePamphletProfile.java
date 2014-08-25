@@ -10,6 +10,8 @@
 
 import acm.graphics.*;
 import java.util.*;
+import java.awt.Image;
+import java.awt.image.*;
 
 public class FacePamphletProfile implements FacePamphletConstants {
 	
@@ -34,14 +36,15 @@ public class FacePamphletProfile implements FacePamphletConstants {
 	/** 
 	 * This method returns the image associated with the profile.  
 	 * The default image assigned for all profiles is denoted in FacePamphlet Constands
-	 * under the variable DEFAULT_PROFILE_PICTURE. */ 
+	 */ 
 	public GImage getImage() {
 		return profilePicture;
 	}
 
 	/** This method sets the image associated with the profile. */ 
-	public void setImage(GImage image) {
-		// You fill this in
+	public void setImage(Image image) {
+		//could be buggy - changed the default method from GImage to Image to make the bug error go away...//
+		profilePicture.setImage(image);
 	}
 	
 	/** 
@@ -50,13 +53,12 @@ public class FacePamphletProfile implements FacePamphletConstants {
 	 * returns the empty string ("").
 	 */ 
 	public String getStatus() {
-		// You fill this in.  Currently always returns the empty string.
-		return "";
+		return status;
 	}
 	
 	/** This method sets the status associated with the profile. */ 
-	public void setStatus(String status) {
-		// You fill this in
+	public void setStatus(String newStatus) {
+		status.replaceAll(status, newStatus);
 	}
 
 	/** 
