@@ -5,6 +5,7 @@
  * different modules in the FacePamphlet application.  Any class
  * that implements this interface can use these constants.
  */
+import acm.graphics.*;
 
 public interface FacePamphletConstants {
 
@@ -74,6 +75,11 @@ public interface FacePamphletConstants {
 	 *  the bottom of the Image and the top of the Status component 
 	 *  in the profile */		
 	public static final double STATUS_MARGIN = 20;
+	
+	/**The default profile picture each new profile is created with so that an image will be displayed
+	 * 
+	 */
+	public static final String DEFAULT_PROFILE_PICTURE = "StanfordLogo.jpg";
 
 }
 
