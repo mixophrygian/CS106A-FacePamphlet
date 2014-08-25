@@ -11,7 +11,7 @@ import acm.util.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class FacePamphlet extends Program 
+public class FacePamphlet extends ConsoleProgram
 					implements FacePamphletConstants {
 
 	/**
@@ -32,7 +32,7 @@ public class FacePamphlet extends Program
 		add(Delete, NORTH);
 		add(Lookup, NORTH);
 		
-		//Adds status field//
+		//Adds status field to the left of the window//
 		statusField = new JTextField(TEXT_FIELD_SIZE);
 		statusField.addActionListener(this);
 		add(statusField, WEST);
@@ -40,7 +40,7 @@ public class FacePamphlet extends Program
 		add(ChangeStatus, WEST);
 		add(new JLabel(EMPTY_LABEL_TEXT), WEST);
 		
-		//Adds picture field//
+		//Adds picture field to the left of the window//
 		pictureField = new JTextField(TEXT_FIELD_SIZE);
 		pictureField.addActionListener(this);
 		add(pictureField, WEST);
@@ -48,13 +48,14 @@ public class FacePamphlet extends Program
 		add(ChangePicture, WEST);
 		add(new JLabel(EMPTY_LABEL_TEXT), WEST);
 		
-		//Adds friend field//
+		//Adds friend field to the left of the window//
 		friendField = new JTextField(TEXT_FIELD_SIZE);
 		friendField.addActionListener(this);
 		add(friendField, WEST);
 		AddFriend = new JButton("Add Friend");
 		add(AddFriend, WEST);
 		
+		//Adds a canvas to the center of the window//
 		canvas = new FacePamphletCanvas();
 		add(canvas);
 		
