@@ -20,17 +20,42 @@ public class FacePamphlet extends Program
 	 * initialization that needs to be performed.
 	 */
 	public void init() {
-		// Adds interactors to the top and left side of the window//
+		// Adds interactors to the top of the window//
 		add(new JLabel("Name"), NORTH);
-		textField = new JTextField(TEXT_FIELD_SIZE);
-		textField.addActionListener(this);
-		add(textField, NORTH);
+		nameField = new JTextField(TEXT_FIELD_SIZE);
+		nameField.addActionListener(this);
+		add(nameField, NORTH);
 		Add = new JButton ("Add");
 		Delete = new JButton ("Delete");
 		Lookup = new JButton ("Lookup");
 		add(Add, NORTH);
 		add(Delete, NORTH);
 		add(Lookup, NORTH);
+		
+		//Adds status field//
+		statusField = new JTextField(TEXT_FIELD_SIZE);
+		statusField.addActionListener(this);
+		add(statusField, WEST);
+		ChangeStatus = new JButton("Change Status");
+		add(ChangeStatus, WEST);
+		add(new JLabel(EMPTY_LABEL_TEXT), WEST);
+		
+		//Adds picture field//
+		pictureField = new JTextField(TEXT_FIELD_SIZE);
+		pictureField.addActionListener(this);
+		add(pictureField, WEST);
+		ChangePicture = new JButton("Change Picture");
+		add(ChangePicture, WEST);
+		add(new JLabel(EMPTY_LABEL_TEXT), WEST);
+		
+		//Adds friend field//
+		friendField = new JTextField(TEXT_FIELD_SIZE);
+		friendField.addActionListener(this);
+		add(friendField, WEST);
+		AddFriend = new JButton("Add Friend");
+		add(AddFriend, WEST);
+		
+		
 		
 		addActionListeners();
     }
@@ -46,8 +71,16 @@ public class FacePamphlet extends Program
 	}
 
     
-	private JTextField textField;
+	private JTextField nameField;
 	private JButton Add;
 	private JButton Delete;
 	private JButton Lookup;
+	
+	private JTextField statusField;
+	private JTextField pictureField;
+	private JTextField friendField;
+	private JButton ChangeStatus;
+	private JButton ChangePicture;
+	private JButton AddFriend;
+	
 }
