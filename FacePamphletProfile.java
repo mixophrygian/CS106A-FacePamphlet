@@ -105,8 +105,8 @@ public class FacePamphletProfile implements FacePamphletConstants {
 	 * associated with the profile.
 	 */ 
 	public Iterator<String> getFriends() {
-		// You fill this in.  Currently always returns null.
-		return null;
+		//seems too easy, may also be buggy//
+		return friendsList.iterator();
 	}
 	
 	/** 
@@ -121,7 +121,8 @@ public class FacePamphletProfile implements FacePamphletConstants {
 	 * would return the string: "Alice (coding): Don, Chelsea, Bob"
 	 */ 
 	public String toString() {
-		return ""+profileName+ " ("+status+"):" + friendsList.toString();
+		//Might be a neater way to display friendsList, perhaps a for Loop or iterator//
+		return ""+profileName+ " ("+status+"):" + friendsList.toString() + "";
 	}
 
 	
