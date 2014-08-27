@@ -90,8 +90,14 @@ public class FacePamphletProfile implements FacePamphletConstants {
 	 * the given friend name could not be removed.)
 	 */
 	public boolean removeFriend(String friend) {
-		// You fill this in.  Currently always returns false.
+		if(friendsList.contains(friend)){
+			friendsList.remove(friend);
+			return true;
+			
+		}else{
+			//Add a message that the given friend was not in the list of friends to begin with//
 		return false;
+		}
 	}
 
 	/** 
@@ -115,8 +121,7 @@ public class FacePamphletProfile implements FacePamphletConstants {
 	 * would return the string: "Alice (coding): Don, Chelsea, Bob"
 	 */ 
 	public String toString() {
-		// You fill this in.  Currently always returns the empty string.
-		return "";
+		return ""+profileName+ " ("+status+"):" + friendsList.toString();
 	}
 
 	
