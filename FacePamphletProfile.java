@@ -25,7 +25,7 @@ public class FacePamphletProfile implements FacePamphletConstants {
 		profileName = name;
 		status = " ";
 		profilePicture = new GImage(DEFAULT_PROFILE_PICTURE);
-		
+		friendsList = new ArrayList<String>();
 	}
 
 	/** This method returns the name associated with the profile. */ 
@@ -71,8 +71,14 @@ public class FacePamphletProfile implements FacePamphletConstants {
 	 * a second time.)
 	 */
 	public boolean addFriend(String friend) {
-		// You fill this in.  Currently always returns true.
-		return true;
+		if(!friendsList.contains(friend)) {
+			friendsList.add(friend);
+			return true;
+		}else{
+			//Add a message that this person is already friends with that person//
+			return false;
+		}
+		
 	}
 
 	/** 
@@ -117,4 +123,5 @@ public class FacePamphletProfile implements FacePamphletConstants {
 	private String profileName;
 	private String status;
 	private GImage profilePicture;
+	private ArrayList<String> friendsList;
 }
