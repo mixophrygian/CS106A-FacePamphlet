@@ -42,9 +42,9 @@ public class FacePamphletProfile implements FacePamphletConstants {
 	}
 
 	/** This method sets the image associated with the profile. */ 
-	public void setImage(Image image) {
-		//could be buggy - changed the default method from GImage to Image to make the bug error go away...//
-		profilePicture.setImage(image);
+	public void setImage(GImage image) {
+		//seems too easy...could be buggy?//
+		profilePicture = image;
 	}
 	
 	/** 
