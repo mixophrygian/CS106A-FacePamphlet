@@ -75,9 +75,11 @@ public class FacePamphlet extends ConsoleProgram
      * to respond to these actions.
      */
     public void actionPerformed(ActionEvent e) {
-		// You fill this in as well as add any additional methods
+		
     	Object source = e.getSource();
     	String nameText = nameField.getText();
+    	
+    	//Adding a friend//
     	if (source == Add) {
     		if(!database.containsProfile(nameText)){
     			FacePamphletProfile newProfile = new FacePamphletProfile(nameText);
@@ -91,6 +93,7 @@ public class FacePamphlet extends ConsoleProgram
     		}
     	}
     	
+    	//Deleting a friend//
     	if (source == Delete){
     		if(database.containsProfile(nameText)){
     			database.deleteProfile(nameText);
@@ -102,6 +105,7 @@ public class FacePamphlet extends ConsoleProgram
     		}
     	}
     	
+    	//Looking up a friend//
     	if(source == Lookup){
     		if(database.containsProfile(nameText)){
     			FacePamphletProfile existingProfile = database.getProfile(nameText);
@@ -114,13 +118,17 @@ public class FacePamphlet extends ConsoleProgram
     		
     	}
     	
-    	
+    	//Changing the status of a current profile, if any//
     	if(source == statusField || source == ChangeStatus){
     		println("Status: " + statusField.getText());
     	}
+    	
+    	//Changing the profile picture of a current profile, if any//
     	if(source == pictureField || source == ChangePicture){
     		println("Picture: " + pictureField.getText());
     	}
+    	
+    	//Adding a friend to a current profile, if any//
     	if(source == friendField || source == AddFriend){
     		println("Add friend: " + friendField.getText());
     	}
