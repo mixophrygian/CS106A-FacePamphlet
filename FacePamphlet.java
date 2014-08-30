@@ -143,14 +143,20 @@ public class FacePamphlet extends ConsoleProgram
     			currentProfile.setImage(image);
     			println("The picture for " +currentProfile.getName() + " has been set to " +pictureFileName);
     		}else{
-    			println("Select a profile by Adding or Looking up a name before changing a user's picture");
+    			println("Select a profile by Adding or Looking up a name before changing a user's picture.");
     		}
     		
     	}
     	
     	//Adding a friend to a current profile, if any//
     	if(source == friendField || source == AddFriend){
-    		println("Add friend: " + friendField.getText());
+    		String friendName = friendField.getText();
+    		if(currentProfile != null){
+    			currentProfile.addFriend(friendName);
+    			println(currentProfile.getName() + " and " + friendName + " are now friends!");
+    		}else{
+    			println("Select a profile by Adding or Looking up a name before adding a friend.");
+    		}
     	}
 	}
 
