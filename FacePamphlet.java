@@ -59,6 +59,9 @@ public class FacePamphlet extends ConsoleProgram
 		canvas = new FacePamphletCanvas();
 		add(canvas);
 		
+		//Adds an empty database (hashmap of strings and FacePamphlet Profiles)//
+		database = new FacePamphletDatabase();
+		
 		addActionListeners();
     }
     
@@ -105,4 +108,5 @@ public class FacePamphlet extends ConsoleProgram
 	private JButton AddFriend;
 	
 	private FacePamphletCanvas canvas;
+	private FacePamphletDatabase database;
 }
