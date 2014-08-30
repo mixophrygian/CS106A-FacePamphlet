@@ -23,7 +23,7 @@ public class FacePamphletProfile implements FacePamphletConstants {
 	 */
 	public FacePamphletProfile(String name) {
 		profileName = name;
-		status = " ";
+		status = "( )";
 		profilePicture = new GImage(DEFAULT_PROFILE_PICTURE);
 		friendsList = new ArrayList<String>();
 	}
@@ -58,7 +58,7 @@ public class FacePamphletProfile implements FacePamphletConstants {
 	
 	/** This method sets the status associated with the profile. */ 
 	public void setStatus(String newStatus) {
-		status.replaceAll(status, newStatus);
+		status.replaceAll(status, "(" + newStatus + ")");
 	}
 
 	/** 
