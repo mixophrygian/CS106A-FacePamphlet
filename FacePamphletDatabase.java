@@ -17,7 +17,7 @@ public class FacePamphletDatabase implements FacePamphletConstants {
 	 */
 	public FacePamphletDatabase() {
 		//initializes the database of profiles as an ArrayList of FacePamphletProfiles//
-		profileDatabase = new ArrayList<FacePamphletProfile>();
+		profileDatabase = new HashMap<String, FacePamphletProfile>();
 	}
 	
 	
@@ -28,7 +28,13 @@ public class FacePamphletDatabase implements FacePamphletConstants {
 	 * the new profile passed in.
 	 */
 	public void addProfile(FacePamphletProfile profile) {
-		profileDatabase.add(profile);
+		if(!profileDatabase.keySet().contains(profile)){
+			profileDatabase.put(profile.getName(), profile);
+		}else{
+			profileDatabase.remove(profile.getName());
+			profileDatabase.put(profile.getName(), profile);
+		}
+		
 	}
 
 	
@@ -66,6 +72,6 @@ public class FacePamphletDatabase implements FacePamphletConstants {
 		return false;
 	}
 
-	private ArrayList<FacePamphletProfile> profileDatabase;
+	private HashMap< String, FacePamphletProfile> profileDatabase;
 	
 }
