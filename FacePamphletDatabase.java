@@ -44,8 +44,13 @@ public class FacePamphletDatabase implements FacePamphletConstants {
 	 * the given name, the method returns null.
 	 */
 	public FacePamphletProfile getProfile(String name) {
-		// You fill this in.  Currently always returns null.
-		return null;
+		if(profileDatabase.keySet().contains(name)){
+			return profileDatabase.get(name);
+		}else{
+			
+			return null;
+		}
+		
 	}
 	
 	
