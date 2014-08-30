@@ -79,7 +79,7 @@ public class FacePamphlet extends ConsoleProgram
     		if(!database.containsProfile(nameText)){
     			FacePamphletProfile newProfile = new FacePamphletProfile(nameText);
     			database.addProfile(newProfile);
-    			println("A new profile was added: " + newProfile.toString() + ".");
+    			println("A new profile was added: " + newProfile.toString());
     		}else{
     			FacePamphletProfile existingProfile = database.getProfile(nameText);
     			println("That profile already exists! It is: " + existingProfile.toString() +"" );
@@ -89,7 +89,7 @@ public class FacePamphlet extends ConsoleProgram
     	if (source == Delete){
     		if(database.containsProfile(nameText)){
     			database.deleteProfile(nameText);
-    			println("This profile was deleted: " + nameText + ".");
+    			println("This profile was deleted: " + nameText);
     		}else{
     			println("The profile " + "\"" +nameText+ "\"" + " couldn't be deleted because it doesn't exist.");
     		}
@@ -98,20 +98,20 @@ public class FacePamphlet extends ConsoleProgram
     	if(source == Lookup){
     		if(database.containsProfile(nameText)){
     			FacePamphletProfile existingProfile = database.getProfile(nameText);
-    			println("Look up: " + existingProfile.toString() + ".");
+    			println("Look up: " + existingProfile.toString());
     		}
     		
     	}
     	
     	
     	if(source == statusField || source == ChangeStatus){
-    		println("Status: " + statusField.getText() + ".");
+    		println("Status: " + statusField.getText());
     	}
     	if(source == pictureField || source == ChangePicture){
-    		println("Picture: " + pictureField.getText() + "");
+    		println("Picture: " + pictureField.getText());
     	}
     	if(source == friendField || source == AddFriend){
-    		println("Add friend: " + friendField.getText() + "");
+    		println("Add friend: " + friendField.getText());
     	}
 	}
 
