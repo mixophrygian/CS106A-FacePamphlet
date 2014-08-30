@@ -79,15 +79,28 @@ public class FacePamphlet extends ConsoleProgram
     		if(!database.containsProfile(nameText)){
     			FacePamphletProfile newProfile = new FacePamphletProfile(nameText);
     			database.addProfile(newProfile);
-    			println("Add new profile: " + newProfile.toString() + ".");
+    			println("A new profile was added: " + newProfile.toString() + ".");
+    		}else{
+    			FacePamphletProfile existingProfile = database.getProfile(nameText);
+    			println("That profile already exists! It is: " + existingProfile.toString() +"" );
+    		}
+    	}
+    	
+    	if (source == Delete){
+    		if(database.containsProfile(nameText)){
+    			database.deleteProfile(nameText);
+    			println("This profile was deleted: " + nameText + ".");
+    		}else{
+    			println("The profile " + "\"" +nameText+ "\"" + " couldn't be deleted because it doesn't exist.");
+    		}
+    	}
+    	
+    	if(source == Lookup){
+    		if(database.containsProfile(nameText)){
+    			FacePamphletProfile existingProfile = database.getProfile(nameText);
+    			println("Look up: " + existingProfile.toString() + ".");
     		}
     		
-    	}
-    	if (source == Delete){
-    		println("Delete: " + nameText + ".");
-    	}
-    	if(source == Lookup){
-    		println("Look up: " + nameText + ".");
     	}
     	
     	
