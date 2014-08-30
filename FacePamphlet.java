@@ -74,15 +74,23 @@ public class FacePamphlet extends ConsoleProgram
     public void actionPerformed(ActionEvent e) {
 		// You fill this in as well as add any additional methods
     	Object source = e.getSource();
+    	String nameText = nameField.getText();
     	if (source == Add) {
-    		println("Add: " + nameField.getText() + ".");
+    		if(!database.containsProfile(nameText)){
+    			FacePamphletProfile newProfile = new FacePamphletProfile(nameText);
+    			database.addProfile(newProfile);
+    			println("Add new profile: " + newProfile.toString() + ".");
+    		}
+    		
     	}
     	if (source == Delete){
-    		println("Delete: " + nameField.getText() + ".");
+    		println("Delete: " + nameText + ".");
     	}
     	if(source == Lookup){
-    		println("Look up: " + nameField.getText() + ".");
+    		println("Look up: " + nameText + ".");
     	}
+    	
+    	
     	if(source == statusField || source == ChangeStatus){
     		println("Status: " + statusField.getText() + ".");
     	}
