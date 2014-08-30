@@ -16,7 +16,8 @@ public class FacePamphletDatabase implements FacePamphletConstants {
 	 * the database.
 	 */
 	public FacePamphletDatabase() {
-		// You fill this in
+		//initializes the database of profiles as an ArrayList of FacePamphletProfiles//
+		profileDatabase = new ArrayList<FacePamphletProfile>();
 	}
 	
 	
@@ -27,7 +28,7 @@ public class FacePamphletDatabase implements FacePamphletConstants {
 	 * the new profile passed in.
 	 */
 	public void addProfile(FacePamphletProfile profile) {
-		// You fill this in
+		profileDatabase.add(profile);
 	}
 
 	
@@ -65,4 +66,6 @@ public class FacePamphletDatabase implements FacePamphletConstants {
 		return false;
 	}
 
+	private ArrayList<FacePamphletProfile> profileDatabase;
+	
 }
