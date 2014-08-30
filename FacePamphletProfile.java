@@ -122,7 +122,7 @@ public class FacePamphletProfile implements FacePamphletConstants {
 	 */ 
 	public String toString() {
 		//Might be a neater way to display friendsList, perhaps a for Loop or iterator//
-		return ""+profileName+ " "+status+":" + friendsList.toString() + " ";
+		return ""+profileName+ " "+status+":" + getFriends() + " ";
 	}
 
 	
