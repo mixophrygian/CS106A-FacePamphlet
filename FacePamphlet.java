@@ -99,6 +99,8 @@ public class FacePamphlet extends ConsoleProgram
     		if(database.containsProfile(nameText)){
     			FacePamphletProfile existingProfile = database.getProfile(nameText);
     			println("Look up: " + existingProfile.toString());
+    		}else{
+    			println("Profile with the name "+ "\"" + nameText + "\"" + " doesn't exist.");
     		}
     		
     	}
