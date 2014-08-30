@@ -120,12 +120,32 @@ public class FacePamphlet extends ConsoleProgram
     	
     	//Changing the status of a current profile, if any//
     	if(source == statusField || source == ChangeStatus){
-    		println("Status: " + statusField.getText());
+    		String newStatus = statusField.getText();
+    		if(currentProfile != null){
+    			currentProfile.setStatus(newStatus);
+    			println(currentProfile.getName() + ": " + currentProfile.getStatus());
+    		}else{
+    			println("Select a profile by Adding or Looking up a name before changing a user's status");
+    		}
+    		
     	}
     	
     	//Changing the profile picture of a current profile, if any//
     	if(source == pictureField || source == ChangePicture){
-    		println("Picture: " + pictureField.getText());
+    		String pictureFileName = pictureField.getText();
+    		if(currentProfile != null){
+    			GImage image = null;
+    			try {
+    				image = new GImage(pictureFileName);
+    			}catch (ErrorException ex) {
+    				println("That file name won't work.  Make sure you spelled it right?");
+    			}
+    			currentProfile.setImage(image);
+    			println("The picture for " +currentProfile.getName() + " has been set to " +pictureFileName);
+    		}else{
+    			println("Select a profile by Adding or Looking up a name before changing a user's picture");
+    		}
+    		
     	}
     	
     	//Adding a friend to a current profile, if any//
