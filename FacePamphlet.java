@@ -62,6 +62,9 @@ public class FacePamphlet extends ConsoleProgram
 		//Adds an empty database (hashmap of strings and FacePamphlet Profiles)//
 		database = new FacePamphletDatabase();
 		
+		//Sets the current profile (usable for changing status, pictures and adding friends) to null//
+		currentProfile = null;
+		
 		addActionListeners();
     }
     
@@ -78,11 +81,13 @@ public class FacePamphlet extends ConsoleProgram
     	if (source == Add) {
     		if(!database.containsProfile(nameText)){
     			FacePamphletProfile newProfile = new FacePamphletProfile(nameText);
+    			currentProfile = newProfile;
     			database.addProfile(newProfile);
     			println("A new profile was added: " + newProfile.toString());
     		}else{
     			FacePamphletProfile existingProfile = database.getProfile(nameText);
     			println("That profile already exists! It is: " + existingProfile.toString() +"" );
+    			currentProfile = existingProfile;
     		}
     	}
     	
@@ -90,8 +95,10 @@ public class FacePamphlet extends ConsoleProgram
     		if(database.containsProfile(nameText)){
     			database.deleteProfile(nameText);
     			println("This profile was deleted: " + nameText);
+    			currentProfile = null;
     		}else{
     			println("The profile " + "\"" +nameText+ "\"" + " couldn't be deleted because it doesn't exist.");
+    			currentProfile = null;
     		}
     	}
     	
@@ -99,8 +106,10 @@ public class FacePamphlet extends ConsoleProgram
     		if(database.containsProfile(nameText)){
     			FacePamphletProfile existingProfile = database.getProfile(nameText);
     			println("Look up: " + existingProfile.toString());
+    			currentProfile = existingProfile;
     		}else{
     			println("Profile with the name "+ "\"" + nameText + "\"" + " doesn't exist.");
+    			currentProfile = null;
     		}
     		
     	}
@@ -132,4 +141,5 @@ public class FacePamphlet extends ConsoleProgram
 	
 	private FacePamphletCanvas canvas;
 	private FacePamphletDatabase database;
+	private FacePamphletProfile currentProfile;
 }
