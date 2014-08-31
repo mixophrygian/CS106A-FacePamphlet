@@ -11,7 +11,7 @@ import acm.util.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class FacePamphlet extends ConsoleProgram
+public class FacePamphlet extends Program
 					implements FacePamphletConstants {
 
 	/**
@@ -85,10 +85,11 @@ public class FacePamphlet extends ConsoleProgram
     			FacePamphletProfile newProfile = new FacePamphletProfile(nameText);
     			currentProfile = newProfile;
     			database.addProfile(newProfile);
-    			println("A new profile was added: " + newProfile.toString());
+    			canvas.showMessage("A new profile was added: " + newProfile.toString());
+    		
     		}else{
     			FacePamphletProfile existingProfile = database.getProfile(nameText);
-    			println("That profile already exists! It is: " + existingProfile.toString() +"" );
+    			canvas.showMessage("That profile already exists! It is: " + existingProfile.toString() +"" );
     			currentProfile = existingProfile;
     		}
     	}
@@ -97,10 +98,10 @@ public class FacePamphlet extends ConsoleProgram
     	if (source == Delete){
     		if(database.containsProfile(nameText)){
     			database.deleteProfile(nameText);
-    			println("This profile was deleted: " + nameText);
+    			canvas.showMessage("This profile was deleted: " + nameText);
     			currentProfile = null;
     		}else{
-    			println("The profile " + "\"" +nameText+ "\"" + " couldn't be deleted because it doesn't exist.");
+    			canvas.showMessage("The profile " + "\"" +nameText+ "\"" + " couldn't be deleted because it doesn't exist.");
     			currentProfile = null;
     		}
     	}
@@ -110,10 +111,10 @@ public class FacePamphlet extends ConsoleProgram
     		if(database.containsProfile(nameText)){
     			FacePamphletProfile existingProfile = database.getProfile(nameText);
     			currentProfile = existingProfile;
-    			println("Look up: " + currentProfile.toString());
+    			canvas.showMessage("Look up: " + currentProfile.toString());
     			
     		}else{
-    			println("Profile with the name "+ "\"" + nameText + "\"" + " doesn't exist.");
+    			canvas.showMessage("Profile with the name "+ "\"" + nameText + "\"" + " doesn't exist.");
     			currentProfile = null;
     		}
     		
@@ -124,9 +125,9 @@ public class FacePamphlet extends ConsoleProgram
     		String newStatus = statusField.getText();
     		if(currentProfile != null){
     			currentProfile.setStatus(newStatus);
-    			println(currentProfile.getName() + ": " + currentProfile.getStatus());
+    			canvas.showMessage(currentProfile.getName() + ": " + currentProfile.getStatus());
     		}else{
-    			println("Select a profile by Adding or Looking up a name before changing a user's status");
+    			canvas.showMessage("Select a profile by Adding or Looking up a name before changing a user's status");
     		}
     		
     	}
@@ -139,13 +140,13 @@ public class FacePamphlet extends ConsoleProgram
     			try {
     				image = new GImage(pictureFileName);
     				currentProfile.setImage(image);
-        			println("The picture for " +currentProfile.getName() + " has been set to " +pictureFileName);
+    				canvas.showMessage("The picture for " +currentProfile.getName() + " has been set to " +pictureFileName);
     			}catch (ErrorException ex) {
-    				println("That file name won't work.  Make sure you spelled it right?");
+    				canvas.showMessage("That file name won't work.  Make sure you spelled it right?");
     			}
     
     		}else{
-    			println("Select a profile by Adding or Looking up a name before changing a user's picture.");
+    			canvas.showMessage("Select a profile by Adding or Looking up a name before changing a user's picture.");
     		}
     		
     	}
@@ -156,7 +157,7 @@ public class FacePamphlet extends ConsoleProgram
     		if(currentProfile != null){
     			
     			if(currentProfile.getName().equals(friendName)){
-    				println("You can't list yourself as a friend. Dweeb!");
+    				canvas.showMessage("You can't list yourself as a friend. Dweeb!");
     			}else{
     			
     			
@@ -165,20 +166,20 @@ public class FacePamphlet extends ConsoleProgram
     					currentProfile.addFriend(friendName);
     					FacePamphletProfile thatFriend = database.getProfile(friendName);
     					thatFriend.addFriend(currentProfile.getName());
-    					println(currentProfile.getName() + " and " + friendName + " are now friends!");
+    					canvas.showMessage(currentProfile.getName() + " and " + friendName + " are now friends!");
     					
     				}else{
-    					println("Those two users are already friends.");
+    					canvas.showMessage("Those two users are already friends.");
             			
     				}
     				
     			}else{
-    				println("That user hasn't joined FacePamphlet yet.");
+    				canvas.showMessage("That user hasn't joined FacePamphlet yet.");
     				currentProfile = null;
     			}
     			}
     		}else{
-    			println("Select a profile by Adding or Looking up a name before adding a friend.");
+    			canvas.showMessage("Select a profile by Adding or Looking up a name before adding a friend.");
     		}
     	}
 	}
