@@ -124,7 +124,7 @@ public class FacePamphletProfile implements FacePamphletConstants {
 		//Might be a neater way to display friendsList, perhaps a for Loop or iterator//
 		String neatFriendsList = " ";
 		for(int i = 0; i < friendsList.size(); i++){
-			neatFriendsList += " " + friendsList.get(i);
+			neatFriendsList = neatFriendsList + " " + friendsList.get(i);
 			i++;
 		}
 		
