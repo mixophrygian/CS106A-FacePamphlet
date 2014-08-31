@@ -126,7 +126,7 @@ public class FacePamphletProfile implements FacePamphletConstants {
 		String nextFriend;
 		for(int i = 0; i < friendsList.size(); i++){
 			nextFriend = friendsList.get(i);
-			neatFriendsList = neatFriendsList + " " + nextFriend;
+			neatFriendsList.concat(nextFriend);
 			i++;
 		}
 		
