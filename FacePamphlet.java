@@ -154,15 +154,17 @@ public class FacePamphlet extends ConsoleProgram
     		String friendName = friendField.getText();
     		if(currentProfile != null){
     			if(database.containsProfile(friendName)){
-    				if(currentProfile.addFriend(friendName) == false){
-    					println("Those two users are already friends.");
+    				if(currentProfile.addFriend(friendName)){
+    					println(currentProfile.getName() + " and " + friendName + " are now friends!");
+    					
     				}else{
-    					currentProfile.addFriend(friendName);
-            			println(currentProfile.getName() + " and " + friendName + " are now friends!");
+    					println("Those two users are already friends.");
+            			
     				}
     				
     			}else{
     				println("That user hasn't joined FacePamphlet yet.");
+    				currentProfile = null;
     			}
     			
     		}else{
