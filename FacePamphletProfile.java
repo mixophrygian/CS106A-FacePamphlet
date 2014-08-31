@@ -128,7 +128,7 @@ public class FacePamphletProfile implements FacePamphletConstants {
 			neatFriendsList.concat(nextFriend + ", ");
 		}
 		
-		return ""+profileName+ " "+status+":" + neatFriendsList + " ";
+		return ""+profileName+ " "+status+":" + friendsList.toString() + " ";
 	}
 
 	
