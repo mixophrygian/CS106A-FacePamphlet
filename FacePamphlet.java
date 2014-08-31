@@ -154,7 +154,7 @@ public class FacePamphlet extends ConsoleProgram
     		String friendName = friendField.getText();
     		if(currentProfile != null){
     			if(database.containsProfile(friendName)){
-    				if(currentProfile.addFriend(friendName)){
+    				if(currentProfile.addFriend(friendName) == true){
     					currentProfile.addFriend(friendName);
     					FacePamphletProfile thatFriend = database.getProfile(friendName);
     					thatFriend.addFriend(currentProfile.getName());
