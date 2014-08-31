@@ -153,9 +153,12 @@ public class FacePamphlet extends ConsoleProgram
     	if(source == friendField || source == AddFriend){
     		String friendName = friendField.getText();
     		if(currentProfile != null){
+    			
     			if(currentProfile.getName().equals(friendName)){
-    				println("You can't list yourself as a friend.");
-    			}
+    				println("You can't list yourself as a friend. Dweeb!");
+    			}else{
+    			
+    			
     			if(database.containsProfile(friendName)){
     				if(currentProfile.addFriend(friendName) == true){
     					currentProfile.addFriend(friendName);
@@ -172,7 +175,7 @@ public class FacePamphlet extends ConsoleProgram
     				println("That user hasn't joined FacePamphlet yet.");
     				currentProfile = null;
     			}
-    			
+    			}
     		}else{
     			println("Select a profile by Adding or Looking up a name before adding a friend.");
     		}
