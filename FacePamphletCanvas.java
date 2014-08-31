@@ -34,7 +34,7 @@ public class FacePamphletCanvas extends GCanvas
 	 */
 	public void showMessage(String msg) {
 		message.setLabel(msg);
-		message.setLocation( (getWidth()-message.getWidth()) / 2, (getHeight()-(BOTTOM_MESSAGE_MARGIN*2); 
+		message.setLocation( (getWidth()-message.getWidth()) / 2, (getHeight()-(BOTTOM_MESSAGE_MARGIN*2)); 
 		
 	}
 	
