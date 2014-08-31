@@ -32,10 +32,10 @@ public class FacePamphletCanvas extends GCanvas
 	 * passed in.
 	 */
 	public void showMessage(String msg) {
-		add(message);
+		
 		message.setLabel(msg);
 		message.setFont(MESSAGE_FONT);
-		
+		add(message);
 	}
 	
 	
