@@ -72,10 +72,8 @@ public class FacePamphletProfile implements FacePamphletConstants {
 	 */
 	public boolean addFriend(String friend) {
 		if(!friendsList.contains(friend)) {
-			friendsList.add(friend);
 			return true;
 		}else{
-			//Add a message that this person is already friends with that person//
 			return false;
 		}
 		
