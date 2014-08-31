@@ -58,7 +58,7 @@ public class FacePamphlet extends Program
 		//Adds a canvas to the center of the window//
 		canvas = new FacePamphletCanvas();
 		add(canvas);
-		FacePamphletCanvas();
+		
 		
 		//Adds an empty database (hashmap of strings and FacePamphlet Profiles)//
 		database = new FacePamphletDatabase();
