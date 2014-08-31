@@ -137,11 +137,12 @@ public class FacePamphlet extends ConsoleProgram
     			GImage image = null;
     			try {
     				image = new GImage(pictureFileName);
+    				currentProfile.setImage(image);
+        			println("The picture for " +currentProfile.getName() + " has been set to " +pictureFileName);
     			}catch (ErrorException ex) {
     				println("That file name won't work.  Make sure you spelled it right?");
     			}
-    			currentProfile.setImage(image);
-    			println("The picture for " +currentProfile.getName() + " has been set to " +pictureFileName);
+    
     		}else{
     			println("Select a profile by Adding or Looking up a name before changing a user's picture.");
     		}
