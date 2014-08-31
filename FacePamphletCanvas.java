@@ -20,7 +20,7 @@ public class FacePamphletCanvas extends GCanvas
 	 * the display
 	 */
 	public FacePamphletCanvas() {
-		message = new GLabel(null, 0,0);
+		
 	}
 
 	
@@ -52,5 +52,5 @@ public class FacePamphletCanvas extends GCanvas
 		// You fill this in
 	}
 
-	private GLabel message;
+	private GLabel message = new GLabel(null, 0,0);
 }
