@@ -95,7 +95,7 @@ public class FacePamphlet extends Program
     	}
     	
     	//Deleting a friend//
-    	if (source == Delete){
+    	if (source == Delete && !nameText.equals("")){
     		if(database.containsProfile(nameText)){
     			database.deleteProfile(nameText);
     			canvas.showMessage("This profile was deleted: " + nameText);
@@ -107,7 +107,7 @@ public class FacePamphlet extends Program
     	}
     	
     	//Looking up a friend//
-    	if(source == Lookup){
+    	if(source == Lookup && !nameText.equals("")){
     		if(database.containsProfile(nameText)){
     			FacePamphletProfile existingProfile = database.getProfile(nameText);
     			currentProfile = existingProfile;
