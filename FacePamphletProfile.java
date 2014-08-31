@@ -72,6 +72,7 @@ public class FacePamphletProfile implements FacePamphletConstants {
 	 */
 	public boolean addFriend(String friend) {
 		if(!friendsList.contains(friend)) {
+			friendsList.add(friend);
 			return true;
 		}else{
 			return false;
