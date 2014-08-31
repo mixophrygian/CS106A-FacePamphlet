@@ -20,7 +20,9 @@ public class FacePamphletCanvas extends GCanvas
 	 * the display
 	 */
 	public FacePamphletCanvas() {
-		
+		message = new GLabel("Click ADD to add a new profile");
+		message.setFont(MESSAGE_FONT);
+		add(message, (getWidth() - message.getWidth() /2), (getHeight()-BOTTOM_MESSAGE_MARGIN));
 	}
 
 	
@@ -31,10 +33,8 @@ public class FacePamphletCanvas extends GCanvas
 	 * passed in.
 	 */
 	public void showMessage(String msg) {
-		messageContent = msg;
-		message = new GLabel(messageContent, getWidth()/2, getHeight() - BOTTOM_MESSAGE_MARGIN);
-		message.setFont(MESSAGE_FONT);
-		add(message);
+		message = new GLabel(msg, getWidth()/2, getHeight() - BOTTOM_MESSAGE_MARGIN);
+		message.setLocation( (getWidth()-message.getWidth()) / 2, getHeight()); 
 		
 	}
 	
@@ -53,5 +53,5 @@ public class FacePamphletCanvas extends GCanvas
 	}
 
 GLabel message;
-String messageContent;
+
 }
