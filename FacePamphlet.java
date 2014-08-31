@@ -56,7 +56,7 @@ public class FacePamphlet extends Program
 		add(AddFriend, WEST);
 		
 		//Adds a canvas to the center of the window//
-		canvas = new FacePamphletCanvas();
+		
 		add(canvas);
 		
 		
@@ -198,7 +198,7 @@ public class FacePamphlet extends Program
 	private JButton ChangePicture;
 	private JButton AddFriend;
 	
-	private FacePamphletCanvas canvas;
+	private FacePamphletCanvas canvas = new FacePamphletCanvas();;
 	private FacePamphletDatabase database;
 	private FacePamphletProfile currentProfile;
 }
