@@ -126,12 +126,7 @@ public class FacePamphletProfile implements FacePamphletConstants {
 		boolean firstFriend = true;
 		for(int i = 0; i < friendsList.size(); i++){
 			String nextFriend = friendsList.get(i);
-			if(firstFriend){
-				neatFriendsList = neatFriendsList + nextFriend;
-				firstFriend = false;
-			}else{
-				neatFriendsList = neatFriendsList + ", " + nextFriend;
-			}
+			neatFriendsList = neatFriendsList + " " + nextFriend;
 			i++;
 		}
 		
