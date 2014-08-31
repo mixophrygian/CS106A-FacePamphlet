@@ -56,7 +56,6 @@ public class FacePamphlet extends Program
 		add(AddFriend, WEST);
 		
 		//Adds a canvas to the center of the window//
-		
 		add(canvas);
 		
 		
