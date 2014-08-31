@@ -32,7 +32,9 @@ public class FacePamphletCanvas extends GCanvas
 	 * passed in.
 	 */
 	public void showMessage(String msg) {
-		GLabel message = new GLabel(msg, getWidth()/2, getHeight() - BOTTOM_MESSAGE_MARGIN);
+		remove(message);
+		message.setLabel(msg);
+		message.move(getWidth()/2, getHeight() - BOTTOM_MESSAGE_MARGIN);
 		message.setFont(MESSAGE_FONT);
 		message.move(-msg.length()/2, 0);
 		add(message);
