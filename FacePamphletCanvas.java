@@ -22,7 +22,7 @@ public class FacePamphletCanvas extends GCanvas
 	public FacePamphletCanvas() {
 		message = new GLabel("Click ADD to add a new profile");
 		message.setFont(MESSAGE_FONT);
-		add(message, (getWidth() - message.getWidth() /2), (getHeight()-BOTTOM_MESSAGE_MARGIN));
+		add(message, (getWidth() - message.getWidth() /2), (getHeight()-BOTTOM_MESSAGE_MARGIN*2));
 	}
 
 	
