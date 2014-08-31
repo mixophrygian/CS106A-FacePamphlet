@@ -165,7 +165,7 @@ public class FacePamphlet extends ConsoleProgram
     					FacePamphletProfile thatFriend = database.getProfile(friendName);
     					thatFriend.addFriend(currentProfile.getName());
     					println(currentProfile.getName() + " and " + friendName + " are now friends!");
-    					println("Here are " + currentProfile + "'s friends: " + currentProfile.getFriends().toString());
+    					
     				}else{
     					println("Those two users are already friends.");
             			
