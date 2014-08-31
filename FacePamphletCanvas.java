@@ -36,7 +36,6 @@ public class FacePamphletCanvas extends GCanvas
 		message.move(getWidth()/2, getHeight() - BOTTOM_MESSAGE_MARGIN);
 		message.setFont(MESSAGE_FONT);
 		message.move(-msg.length()/2, 0);
-		add(message);
 	}
 	
 	
