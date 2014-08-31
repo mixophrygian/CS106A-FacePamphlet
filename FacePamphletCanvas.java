@@ -20,7 +20,7 @@ public class FacePamphletCanvas extends GCanvas
 	 * the display
 	 */
 	public FacePamphletCanvas() {
-		add(message);
+		
 	}
 
 	
@@ -31,11 +31,10 @@ public class FacePamphletCanvas extends GCanvas
 	 * passed in.
 	 */
 	public void showMessage(String msg) {
-		
-		message.setLabel(msg);
-		message.move(getWidth()/2, getHeight() - BOTTOM_MESSAGE_MARGIN);
+		GLabel message = new GLabel (msg, getWidth()/2, getHeight() - BOTTOM_MESSAGE_MARGIN);
 		message.setFont(MESSAGE_FONT);
 		message.move(-msg.length()/2, 0);
+		add(message);
 	}
 	
 	
@@ -52,5 +51,5 @@ public class FacePamphletCanvas extends GCanvas
 		// You fill this in
 	}
 
-	private GLabel message = new GLabel("", 0, 0);
+
 }
