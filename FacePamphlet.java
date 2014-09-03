@@ -57,8 +57,7 @@ public class FacePamphlet extends Program
 		
 		//Adds a canvas to the center of the window//
 		add(canvas);
-		String welcomeMessage = "Click Add to create a new profile!";
-		canvas.showMessage(welcomeMessage);
+		
 		
 		//Adds an empty database (hashmap of strings and FacePamphlet Profiles)//
 		database = new FacePamphletDatabase();
