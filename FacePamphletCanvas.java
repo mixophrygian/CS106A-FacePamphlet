@@ -49,9 +49,18 @@ public class FacePamphletCanvas extends GCanvas
 	 * the user, and a list of the user's friends in the social network.
 	 */
 	public void displayProfile(FacePamphletProfile profile) {
-		// You fill this in
+		// Clears all of the exisitng items (picture, name, status, system messages), re adds the message label as blank.
+		removeAll();
+		message.setLabel("");
+		add(message);
+		
+		//Displays a given profile (name, picture or picture place holder, status and user's friends
 	}
 
 GLabel message;
+GLabel profileName;
+GImage profilePicture;
+GLabel status;
+GLabel friends;
 
 }
