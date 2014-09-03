@@ -57,7 +57,7 @@ public class FacePamphlet extends Program
 		
 		//Adds a canvas to the center of the window//
 		add(canvas);
-		
+		canvas.showMessage("Click Add to create a new profile!");
 		
 		//Adds an empty database (hashmap of strings and FacePamphlet Profiles)//
 		database = new FacePamphletDatabase();
@@ -67,7 +67,7 @@ public class FacePamphlet extends Program
 		
 		addActionListeners();
 		
-		canvas.showMessage("Click Add to create a new profile!");
+		
     }
     
   
