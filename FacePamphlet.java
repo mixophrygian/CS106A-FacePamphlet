@@ -66,6 +66,8 @@ public class FacePamphlet extends Program
 		currentProfile = null;
 		
 		addActionListeners();
+		
+		canvas.showMessage("Click Add to create a new profile!");
     }
     
   
