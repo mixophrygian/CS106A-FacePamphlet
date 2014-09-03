@@ -20,7 +20,7 @@ public class FacePamphletCanvas extends GCanvas
 	 * the display
 	 */
 	public FacePamphletCanvas() {
-		message = new GLabel(" ");
+		message = new GLabel("Welcome to Face Pamphlet");
 		message.setFont(MESSAGE_FONT);
 		add(message, (getWidth() - message.getWidth() /2), (getHeight()-(BOTTOM_MESSAGE_MARGIN*2)));
 	}
