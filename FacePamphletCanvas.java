@@ -55,6 +55,9 @@ public class FacePamphletCanvas extends GCanvas
 		add(message);
 		
 		//Displays a given profile (name, picture or picture place holder, status and user's friends
+		profileName = new GLabel(profile.getName(), LEFT_MARGIN, TOP_MARGIN);
+		profileName.setFont(PROFILE_NAME_FONT);
+		profileName.move(0, profileName.getAscent() / 2);
 	}
 
 GLabel message;
