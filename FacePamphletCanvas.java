@@ -83,7 +83,7 @@ public class FacePamphletCanvas extends GCanvas
 			status.setFont(PROFILE_STATUS_FONT);
 			add(status, LEFT_MARGIN, TOP_MARGIN + IMAGE_HEIGHT + STATUS_MARGIN + status.getAscent());
 		}else{
-			status = new GLabel(profile.getStatus());
+			status = new GLabel("is " + profile.getStatus());
 			status.setFont(PROFILE_STATUS_FONT);
 			add(status, LEFT_MARGIN, TOP_MARGIN + IMAGE_HEIGHT + STATUS_MARGIN + status.getAscent());
 		}
