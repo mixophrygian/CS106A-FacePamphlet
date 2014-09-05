@@ -88,6 +88,7 @@ public class FacePamphlet extends Program
     			currentProfile = newProfile;
     			database.addProfile(newProfile);
     			canvas.showMessage("A new profile was added: " + newProfile.toString());
+    			canvas.displayProfile(currentProfile);
     		
     		}else{
     			FacePamphletProfile existingProfile = database.getProfile(nameText);
