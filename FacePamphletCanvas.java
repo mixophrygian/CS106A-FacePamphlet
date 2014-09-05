@@ -78,7 +78,7 @@ public class FacePamphletCanvas extends GCanvas
 		}
 		
 		//Displays status
-		if(profile.getStatus().equals(null)){
+		if(profile.getStatus().equals("")){
 			status = new GLabel("No current status");
 			status.setFont(PROFILE_STATUS_FONT);
 			add(status, LEFT_MARGIN, TOP_MARGIN + IMAGE_HEIGHT + STATUS_MARGIN);
