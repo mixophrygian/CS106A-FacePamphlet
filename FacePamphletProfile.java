@@ -24,7 +24,7 @@ public class FacePamphletProfile implements FacePamphletConstants {
 	public FacePamphletProfile(String name) {
 		profileName = name;
 		status = "( )";
-		profilePicture = new GImage(DEFAULT_PROFILE_PICTURE);
+		profilePicture = new GImage("");
 		friendsList = new ArrayList<String>();
 	}
 
