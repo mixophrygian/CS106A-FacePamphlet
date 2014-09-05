@@ -81,7 +81,7 @@ public class FacePamphlet extends Program
     	Object source = e.getSource();
     	String nameText = nameField.getText();
     	
-    	//Adding a friend//
+    	//Adding a new profile//
     	if (source == Add && !nameText.equals("")) {
     		if(!database.containsProfile(nameText)){
     			FacePamphletProfile newProfile = new FacePamphletProfile(nameText);
