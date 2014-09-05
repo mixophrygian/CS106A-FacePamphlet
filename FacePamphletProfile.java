@@ -23,7 +23,7 @@ public class FacePamphletProfile implements FacePamphletConstants {
 	 */
 	public FacePamphletProfile(String name) {
 		profileName = name;
-		status = "( )";
+		status = null;
 		friendsList = new ArrayList<String>();
 		profilePicture = null;
 	}
@@ -57,9 +57,12 @@ public class FacePamphletProfile implements FacePamphletConstants {
 	 * returns the empty string ("").
 	 */ 
 	public String getStatus() {
+		if(status == null){
+			return null;
+		}else{
 		return status;
 	}
-	
+	}
 	/** This method sets the status associated with the profile. */ 
 	public void setStatus(String newStatus) {
 		status = "("+newStatus+")";
