@@ -81,11 +81,11 @@ public class FacePamphletCanvas extends GCanvas
 		if(profile.getStatus().equals("")){
 			status = new GLabel("No current status");
 			status.setFont(PROFILE_STATUS_FONT);
-			add(status, LEFT_MARGIN, TOP_MARGIN + IMAGE_HEIGHT + STATUS_MARGIN);
+			add(status, LEFT_MARGIN, TOP_MARGIN + IMAGE_HEIGHT + STATUS_MARGIN + status.getAscent());
 		}else{
 			status = new GLabel(profile.getStatus());
 			status.setFont(PROFILE_STATUS_FONT);
-			add(status, LEFT_MARGIN, TOP_MARGIN + IMAGE_HEIGHT + STATUS_MARGIN);
+			add(status, LEFT_MARGIN, TOP_MARGIN + IMAGE_HEIGHT + STATUS_MARGIN + status.getAscent());
 		}
 		
 		//Displays friends
