@@ -93,9 +93,10 @@ public class FacePamphletCanvas extends GCanvas
 		friendsLabel.setFont(PROFILE_FRIEND_LABEL_FONT);
 		add(friendsLabel);
 		String listOfFriends = "";
-		for(int i = 0; profile.getFriends().hasNext(); i++){
+		while(profile.getFriends().hasNext()){
 			String nextFriend = profile.getFriends().next();
 			listOfFriends += "\r" + nextFriend;
+			profile.getFriends().remove();
 		}
 			
 		friends = new GLabel(listOfFriends, getWidth()/2, TOP_MARGIN + IMAGE_MARGIN + friendsLabel.getAscent());
