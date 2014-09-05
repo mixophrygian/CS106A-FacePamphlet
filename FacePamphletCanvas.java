@@ -75,7 +75,7 @@ public class FacePamphletCanvas extends GCanvas
 			//picture.scale(IMAGE_WIDTH, IMAGE_HEIGHT);
 			//picture.move(LEFT_MARGIN, TOP_MARGIN + IMAGE_MARGIN);
 			//add(picture);
-		}
+		
 		
 		//Displays status
 		
