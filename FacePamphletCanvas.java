@@ -64,7 +64,7 @@ public class FacePamphletCanvas extends GCanvas
 		
 		//Displays picture.  Default picture is the text "No Image" in a rectangle
 		//if(profile.getImage().equals(DEFAULT_PROFILE_PICTURE)){
-			GRect rect = new GRect (LEFT_MARGIN, TOP_MARGIN + IMAGE_MARGIN);
+			GRect rect = new GRect (LEFT_MARGIN, TOP_MARGIN + IMAGE_MARGIN, IMAGE_WIDTH, IMAGE_HEIGHT);
 			GLabel noImage = new GLabel("No Image", LEFT_MARGIN + rect.getWidth()/2, TOP_MARGIN+IMAGE_MARGIN + rect.getHeight()/2);
 			noImage.setFont(PROFILE_IMAGE_FONT);
 			noImage.move(-noImage.getWidth()/2, -noImage.getAscent()/2);
