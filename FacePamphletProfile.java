@@ -65,7 +65,7 @@ public class FacePamphletProfile implements FacePamphletConstants {
 	}
 	/** This method sets the status associated with the profile. */ 
 	public void setStatus(String newStatus) {
-		status = "("+newStatus+")";
+		status = newStatus;
 	}
 
 	/** 
