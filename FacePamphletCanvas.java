@@ -93,14 +93,15 @@ public class FacePamphletCanvas extends GCanvas
 		friendsLabel.setFont(PROFILE_FRIEND_LABEL_FONT);
 		add(friendsLabel);
 		String listOfFriends = "";
-		while(profile.getFriends().hasNext()){
-			String nextFriend = profile.getFriends().next();
+		Iterator<String> friends = profile.getFriends();
+		while(friends.hasNext()){
+			String nextFriend = friends.next();
 			listOfFriends += "\r" + nextFriend;
 			
 		}
 			
-		friends = new GLabel(listOfFriends, getWidth()/2, TOP_MARGIN + IMAGE_MARGIN + friendsLabel.getAscent());
-		add(friends);
+		friendsList = new GLabel(listOfFriends, getWidth()/2, TOP_MARGIN + IMAGE_MARGIN + friendsLabel.getAscent());
+		add(friendsList);
 			
 		}
 		
@@ -115,6 +116,6 @@ public class FacePamphletCanvas extends GCanvas
 GLabel message;
 GLabel profileName;
 GLabel status;
-GLabel friends;
+GLabel friendsList;
 
 }
