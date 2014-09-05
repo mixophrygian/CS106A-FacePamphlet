@@ -89,6 +89,10 @@ public class FacePamphletCanvas extends GCanvas
 		}
 		
 		//Displays friends
+		GLabel friendsLabel = new GLabel("Friends: ", getWidth()/2, TOP_MARGIN+IMAGE_MARGIN);
+		friendsLabel.setFont(PROFILE_FRIEND_FONT);
+			
+		
 	}
 	
 	public void removeProfile(){
