@@ -79,7 +79,7 @@ public interface FacePamphletConstants {
 	/**The default profile picture each new profile is created with so that an image will be displayed
 	 * 
 	 */
-	public static final String DEFAULT_PROFILE_PICTURE = null;
+	public static final String DEFAULT_PROFILE_PICTURE = "";
 
 }
 
