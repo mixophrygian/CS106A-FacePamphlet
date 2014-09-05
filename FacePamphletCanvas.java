@@ -96,10 +96,10 @@ public class FacePamphletCanvas extends GCanvas
 		Iterator<String> friends = profile.getFriends();
 		while(friends.hasNext()){
 			String nextFriend = friends.next();
-			listOfFriends += "\r" + nextFriend;
+			listOfFriends += "\r *" + nextFriend;
 			
 		}
-			
+		
 		friendsList = new GLabel(listOfFriends, getWidth()/2, TOP_MARGIN + IMAGE_MARGIN + friendsLabel.getAscent());
 		add(friendsList);
 			
