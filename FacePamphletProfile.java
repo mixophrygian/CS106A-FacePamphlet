@@ -24,7 +24,6 @@ public class FacePamphletProfile implements FacePamphletConstants {
 	public FacePamphletProfile(String name) {
 		profileName = name;
 		status = "( )";
-		profilePicture = new GImage("");
 		friendsList = new ArrayList<String>();
 	}
 
@@ -139,6 +138,6 @@ public class FacePamphletProfile implements FacePamphletConstants {
 	
 	private String profileName;
 	private String status;
-	private GImage profilePicture;
+	private GImage profilePicture = new GImage("");
 	private ArrayList<String> friendsList;
 }
