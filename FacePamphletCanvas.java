@@ -58,6 +58,7 @@ public class FacePamphletCanvas extends GCanvas
 		profileName = new GLabel(profile.getName(), LEFT_MARGIN, TOP_MARGIN);
 		profileName.setFont(PROFILE_NAME_FONT);
 		profileName.move(0, profileName.getAscent() / 2);
+		add(profileName);
 	}
 
 GLabel message;
