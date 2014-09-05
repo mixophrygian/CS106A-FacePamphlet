@@ -178,6 +178,7 @@ public class FacePamphlet extends Program
     					FacePamphletProfile thatFriend = database.getProfile(friendName);
     					thatFriend.addFriend(currentProfile.getName());
     					canvas.showMessage(currentProfile.getName() + " and " + friendName + " are now friends!");
+    					canvas.displayProfile(currentProfile);
     					
     				}else{
     					canvas.showMessage("Those two users are already friends.");
