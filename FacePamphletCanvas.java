@@ -72,7 +72,7 @@ public class FacePamphletCanvas extends GCanvas
 			add(noImage);
 		}else{
 			GImage picture = profile.getImage();
-			picture.scale(IMAGE_WIDTH, IMAGE_HEIGHT);
+			picture.setSize(IMAGE_WIDTH, IMAGE_HEIGHT);
 			picture.move(LEFT_MARGIN, TOP_MARGIN + IMAGE_MARGIN);
 			add(picture);
 		}
