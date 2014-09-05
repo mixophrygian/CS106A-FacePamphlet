@@ -96,12 +96,14 @@ public class FacePamphletCanvas extends GCanvas
 		while(profile.getFriends().hasNext()){
 			String nextFriend = profile.getFriends().next();
 			listOfFriends += "\r" + nextFriend;
-			friends = new GLabel(profile.getFriends().next(), getWidth()/2, TOP_MARGIN + IMAGE_MARGIN + friendsLabel.getAscent());
-			add(friends);
+		}
+			
+		friends = new GLabel(profile.getFriends().next(), getWidth()/2, TOP_MARGIN + IMAGE_MARGIN + friendsLabel.getAscent());
+		add(friends);
 			
 		}
 		
-	}
+	
 	
 	public void removeProfile(){
 		removeAll();
