@@ -71,13 +71,16 @@ public class FacePamphletCanvas extends GCanvas
 			add(rect);
 			add(noImage);
 		}else{
-			GImage picture = profile.getImage();
-			picture.setSize(IMAGE_WIDTH, IMAGE_HEIGHT);
-			picture.setLocation(LEFT_MARGIN, TOP_MARGIN + IMAGE_MARGIN);
-			add(picture);
+			GImage profilePicture = profile.getImage();
+			profilePicture.setSize(IMAGE_WIDTH, IMAGE_HEIGHT);
+			profilePicture.setLocation(LEFT_MARGIN, TOP_MARGIN + IMAGE_MARGIN);
+			add(profilePicture);
 		}
 		
 		//Displays status
+		if(profile.getStatus().equals(null)){
+			
+		}
 		
 		//Displays friends
 	}
@@ -90,7 +93,6 @@ public class FacePamphletCanvas extends GCanvas
 
 GLabel message;
 GLabel profileName;
-GImage profilePicture;
 GLabel status;
 GLabel friends;
 
