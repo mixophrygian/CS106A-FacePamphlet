@@ -25,6 +25,7 @@ public class FacePamphletProfile implements FacePamphletConstants {
 		profileName = name;
 		status = "( )";
 		friendsList = new ArrayList<String>();
+		profilePicture = null;
 	}
 
 	/** This method returns the name associated with the profile. */ 
@@ -37,7 +38,11 @@ public class FacePamphletProfile implements FacePamphletConstants {
 	 * The default image assigned for all profiles is denoted in FacePamphlet Constands
 	 */ 
 	public GImage getImage() {
+		if (profilePicture == null) {
+			return null;
+		}else{
 		return profilePicture;
+	}
 	}
 
 	/** This method sets the image associated with the profile. */ 
@@ -138,6 +143,6 @@ public class FacePamphletProfile implements FacePamphletConstants {
 	
 	private String profileName;
 	private String status;
-	private GImage profilePicture = new GImage("");
+	private GImage profilePicture;
 	private ArrayList<String> friendsList;
 }
