@@ -95,6 +95,7 @@ public class FacePamphletCanvas extends GCanvas
 		if(profile.getFriends().hasNext()){
 			friends = new GLabel(profile.getFriends().next(), getWidth()/2, TOP_MARGIN + IMAGE_MARGIN + friendsLabel.getAscent());
 			add(friends);
+			
 		}
 		
 	}
