@@ -74,7 +74,7 @@ public interface FacePamphletConstants {
 	/** The number of vertical pixels in the vertical margin between 
 	 *  the bottom of the Image and the top of the Status component 
 	 *  in the profile */		
-	public static final double STATUS_MARGIN = 25;
+	public static final double STATUS_MARGIN = 30;
 	
 	/**The default profile picture each new profile is created with so that an image will be displayed
 	 * 
