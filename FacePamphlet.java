@@ -95,6 +95,7 @@ public class FacePamphlet extends Program
     			FacePamphletProfile existingProfile = database.getProfile(nameText);
     			canvas.showMessage("That profile already exists! It is: " + existingProfile.toString() +"" );
     			currentProfile = existingProfile;
+    			canvas.displayProfile(currentProfile);
     		}
     	}
     	
@@ -102,9 +103,11 @@ public class FacePamphlet extends Program
     	if (source == Delete && !nameText.equals("")){
     		if(database.containsProfile(nameText)){
     			database.deleteProfile(nameText);
+    			canvas.removeProfile();
     			canvas.showMessage("This profile was deleted: " + nameText);
     			currentProfile = null;
     		}else{
+    			
     			canvas.showMessage("The profile " + "\"" +nameText+ "\"" + " couldn't be deleted because it doesn't exist.");
     			currentProfile = null;
     		}
@@ -115,9 +118,11 @@ public class FacePamphlet extends Program
     		if(database.containsProfile(nameText)){
     			FacePamphletProfile existingProfile = database.getProfile(nameText);
     			currentProfile = existingProfile;
+    			canvas.displayProfile(currentProfile);
     			canvas.showMessage("Look up: " + currentProfile.toString());
     			
     		}else{
+    			canvas.removeProfile();
     			canvas.showMessage("Profile with the name "+ "\"" + nameText + "\"" + " doesn't exist.");
     			currentProfile = null;
     		}
@@ -129,6 +134,7 @@ public class FacePamphlet extends Program
     		String newStatus = statusField.getText();
     		if(currentProfile != null){
     			currentProfile.setStatus(newStatus);
+    			canvas.displayProfile(currentProfile);
     			canvas.showMessage(currentProfile.getName() + ": " + currentProfile.getStatus());
     		}else{
     			canvas.showMessage("Select a profile by Adding or Looking up a name before changing a user's status");
@@ -144,6 +150,7 @@ public class FacePamphlet extends Program
     			try {
     				image = new GImage(pictureFileName);
     				currentProfile.setImage(image);
+    				canvas.displayProfile(currentProfile);
     				canvas.showMessage("The picture for " +currentProfile.getName() + " has been set to " +pictureFileName);
     			}catch (ErrorException ex) {
     				canvas.showMessage("That file name won't work.  Make sure you spelled it right?");
