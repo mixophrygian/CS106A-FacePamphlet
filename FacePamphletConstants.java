@@ -69,7 +69,7 @@ public interface FacePamphletConstants {
 	/** The number of pixels in the vertical margin between the 
 	 *  baseline of the Name component and the top of the Image 
 	 *  displayed in the profile */	
-	public static final double IMAGE_MARGIN = 20;
+	public static final double IMAGE_MARGIN = 25;
 
 	/** The number of vertical pixels in the vertical margin between 
 	 *  the bottom of the Image and the top of the Status component 
