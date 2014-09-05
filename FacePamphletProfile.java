@@ -57,8 +57,8 @@ public class FacePamphletProfile implements FacePamphletConstants {
 	 * returns the empty string ("").
 	 */ 
 	public String getStatus() {
-		if(status.equals(null)){
-			return null;
+		if (status.equals(null)){
+			return "";
 		}else{
 		return status;
 	}
