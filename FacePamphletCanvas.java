@@ -81,6 +81,12 @@ public class FacePamphletCanvas extends GCanvas
 		
 		//Displays friends
 	}
+	
+	public void removeProfile(){
+		removeAll();
+		message.setLabel("");
+		add(message);
+	}
 
 GLabel message;
 GLabel profileName;
