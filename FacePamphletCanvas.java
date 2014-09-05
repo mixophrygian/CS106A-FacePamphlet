@@ -55,12 +55,26 @@ public class FacePamphletCanvas extends GCanvas
 		message.setLabel("");
 		add(message);
 		
-		//Displays a given profile (name, picture or picture place holder, status and user's friends
+		//Displays name
 		profileName = new GLabel(profile.getName(), LEFT_MARGIN, TOP_MARGIN);
 		profileName.setFont(PROFILE_NAME_FONT);
 		profileName.setColor(Color.blue);
 		profileName.move(0, profileName.getAscent() / 2);
 		add(profileName);
+		
+		//Displays picture.  Default picture is the text "No Image" in a rectangle
+		if(profile.getImage().equals(null)){
+			GRect rect = new GRect (LEFT_MARGIN, TOP_MARGIN + IMAGE_MARGIN);
+			GLabel noImage = new GLabel("No Image", LEFT_MARGIN + rect.getWidth()/2, TOP_MARGIN+IMAGE_MARGIN + rect.getHeight()/2);
+			noImage.setFont(PROFILE_IMAGE_FONT);
+			noImage.move(-noImage.getWidth()/2, -noImage.getAscent()/2);
+			add(rect);
+			add(noImage);
+		}
+		
+		//Displays status
+		
+		//Displays friends
 	}
 
 GLabel message;
