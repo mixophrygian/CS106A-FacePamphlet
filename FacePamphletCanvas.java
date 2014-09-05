@@ -11,6 +11,7 @@ import acm.graphics.*;
 import java.awt.*;
 import java.util.*;
 
+
 public class FacePamphletCanvas extends GCanvas 
 					implements FacePamphletConstants {
 	
@@ -57,6 +58,7 @@ public class FacePamphletCanvas extends GCanvas
 		//Displays a given profile (name, picture or picture place holder, status and user's friends
 		profileName = new GLabel(profile.getName(), LEFT_MARGIN, TOP_MARGIN);
 		profileName.setFont(PROFILE_NAME_FONT);
+		profileName.setColor(Color.blue);
 		profileName.move(0, profileName.getAscent() / 2);
 		add(profileName);
 	}
