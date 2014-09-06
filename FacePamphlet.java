@@ -1,8 +1,12 @@
 /* 
  * File: FacePamphlet.java
  * -----------------------
- * When it is finished, this program will implement a basic social network
- * management system.
+ * One possible solution to the FacePamphlet assignment in CS106a, as taken through iTunes U.  This solution
+ * implements all required aspects as well as a couple features such as clearing the text fields when switching
+ * or deleting profiles as well as updating the "change picture" option to open a filebrowser rather than depending
+ * on users to know the exact spelling of the file they want.  The texfield for that option was changed to a JLabel
+ * that displays a users' selected profile image file or "No Image" if none has been selected.  By Eleanor Weigert,
+ * completed 9/5/14.
  */
 
 import acm.program.*;
