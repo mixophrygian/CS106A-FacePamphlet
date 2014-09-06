@@ -173,7 +173,7 @@ public class FacePamphlet extends Program
     			canvas.showMessage("Select a profile by Adding or Looking up a name before changing a user's picture.");
     		}
     		
-    	
+    	}
     	
     	//Adding a friend to a current profile, if any//
     	if(source == friendField && !friendField.getText().equals("") || source == AddFriend){
@@ -207,7 +207,7 @@ public class FacePamphlet extends Program
     			canvas.showMessage("Select a profile by Adding or Looking up a name before adding a friend.");
     		}
     	}
-	}
+    	
     }
     
 	private JTextField nameField;
