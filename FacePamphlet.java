@@ -216,7 +216,7 @@ public class FacePamphlet extends Program
     		}
     	}
 	}
-
+    }
     
 	private JTextField nameField;
 	private JButton Add;
