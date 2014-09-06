@@ -165,10 +165,10 @@ public class FacePamphlet extends Program
     				}
     				currentProfile.setImage(image);
     				canvas.displayProfile(currentProfile);
-    				canvas.showMessage("The picture for " +currentProfile.getName() + " has been set to " + file.toString());
     				String shortFileName = file.toString();
     				shortFileName = shortFileName.substring(file.toString().lastIndexOf("/") + 1);
     				pictureField.setText(shortFileName);
+    				canvas.showMessage("The picture for " +currentProfile.getName() + " has been set to " + shortFileName);
     			}
     
     		}else{
