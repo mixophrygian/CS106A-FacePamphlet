@@ -152,24 +152,28 @@ public class FacePamphlet extends Program
     			BufferedReader rd = null;
     			JFileChooser chooser = new JFileChooser();
     			 FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG & GIF Images", "jpg", "gif");
+    			 chooser.setFileFilter(filter);      
     			int result = chooser.showOpenDialog(this);
     			if(result == JFileChooser.APPROVE_OPTION){
     				try{
     					File file = chooser.getSelectedFile();
     					rd = new BufferedReader(new FileReader(file));
+    					try   
+    				    {  
+    				        image = new GImage(""+file+"");     
+    				    } catch (IOException ex) {
+    				    	canvas.showMessage("That file name won't work.  Make sure you spelled it right?");
+    				    }  
+    				                
     				}catch (IOException ex){
     					canvas.showMessage("That file name won't work.  Make sure you spelled it right?");
     				}
     			}
-    			image = file;
-    			//try {
-    				//image = new GImage(pictureFileName);
-    				//currentProfile.setImage(image);
-    				//canvas.displayProfile(currentProfile);
-    				//canvas.showMessage("The picture for " +currentProfile.getName() + " has been set to " +pictureFileName);
-    			//}catch (ErrorException ex) {
-    			//	
-    		//	}
+    				
+    				currentProfile.setImage(image);
+    				canvas.displayProfile(currentProfile);
+    				canvas.showMessage("The picture for " +currentProfile.getName() + " has been set to " +pictureFileName);
+    			
     
     		}else{
     			canvas.showMessage("Select a profile by Adding or Looking up a name before changing a user's picture.");
