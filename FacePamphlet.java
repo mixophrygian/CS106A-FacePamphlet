@@ -88,14 +88,14 @@ public class FacePamphlet extends Program
     			currentProfile = newProfile;
     			database.addProfile(newProfile);
     			canvas.displayProfile(currentProfile);
-    			canvas.showMessage("A new profile was added: " + newProfile.toString());
+    			canvas.showMessage("A new profile was added: " + newProfile.getName());
     			
     		
     		}else{
     			FacePamphletProfile existingProfile = database.getProfile(nameText);
     			currentProfile = existingProfile;
     			canvas.displayProfile(currentProfile);
-    			canvas.showMessage("That profile already exists! It is: " + existingProfile.toString() +"" );
+    			canvas.showMessage("That profile already exists! It is currently displayed." );
     		}
     	}
     	
