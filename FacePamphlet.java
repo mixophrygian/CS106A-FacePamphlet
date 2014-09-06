@@ -166,7 +166,7 @@ public class FacePamphlet extends Program
     				currentProfile.setImage(image);
     				canvas.displayProfile(currentProfile);
     				canvas.showMessage("The picture for " +currentProfile.getName() + " has been set to " + file.toString());
-    				pictureField.setName(file.toString());
+    				pictureField.setText(file.toString());
     			}
     
     		}else{
