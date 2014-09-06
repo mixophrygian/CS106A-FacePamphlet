@@ -10,6 +10,9 @@ import acm.graphics.*;
 import acm.util.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
+import java.io.*;
 
 public class FacePamphlet extends Program
 					implements FacePamphletConstants {
@@ -40,7 +43,7 @@ public class FacePamphlet extends Program
 		add(ChangeStatus, WEST);
 		add(new JLabel(EMPTY_LABEL_TEXT), WEST);
 		
-		//Adds picture field to the left of the window//
+		//Adds picture button and label to the left of the window
 		pictureField = new JLabel("		No Image");
 		add(pictureField, WEST);
 		ChangePicture = new JButton("Change Picture");
@@ -142,18 +145,31 @@ public class FacePamphlet extends Program
     	}
     	
     	//Changing the profile picture of a current profile, if any//
-    	if(source == pictureField || source == ChangePicture){
-    		String pictureFileName = pictureField.getText();
+    	if(source == ChangePicture){
+    		//String pictureFileName = pictureField.getText();
     		if(currentProfile != null){
     			GImage image = null;
-    			try {
-    				image = new GImage(pictureFileName);
-    				currentProfile.setImage(image);
-    				canvas.displayProfile(currentProfile);
-    				canvas.showMessage("The picture for " +currentProfile.getName() + " has been set to " +pictureFileName);
-    			}catch (ErrorException ex) {
-    				canvas.showMessage("That file name won't work.  Make sure you spelled it right?");
+    			BufferedReader rd = null;
+    			JFileChooser chooser = new JFileChooser();
+    			 FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG & GIF Images", "jpg", "gif");
+    			int result = chooser.showOpenDialog(this);
+    			if(result == JFileChooser.APPROVE_OPTION){
+    				try{
+    					File file = chooser.getSelectedFile();
+    					rd = new BufferedReader(new FileReader(file));
+    				}catch (IOException ex){
+    					canvas.showMessage("That file name won't work.  Make sure you spelled it right?");
+    				}
     			}
+    			image = file;
+    			//try {
+    				//image = new GImage(pictureFileName);
+    				//currentProfile.setImage(image);
+    				//canvas.displayProfile(currentProfile);
+    				//canvas.showMessage("The picture for " +currentProfile.getName() + " has been set to " +pictureFileName);
+    			//}catch (ErrorException ex) {
+    			//	
+    		//	}
     
     		}else{
     			canvas.showMessage("Select a profile by Adding or Looking up a name before changing a user's picture.");
