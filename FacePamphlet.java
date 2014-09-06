@@ -93,9 +93,9 @@ public class FacePamphlet extends Program
     		
     		}else{
     			FacePamphletProfile existingProfile = database.getProfile(nameText);
-    			canvas.showMessage("That profile already exists! It is: " + existingProfile.toString() +"" );
     			currentProfile = existingProfile;
     			canvas.displayProfile(currentProfile);
+    			canvas.showMessage("That profile already exists! It is: " + existingProfile.toString() +"" );
     		}
     	}
     	
