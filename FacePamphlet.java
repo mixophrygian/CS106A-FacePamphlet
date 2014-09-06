@@ -163,13 +163,13 @@ public class FacePamphlet extends Program
     				}catch (IOException ex){
     					canvas.showMessage("That file name won't work.  Make sure you spelled it right?");
     				}
-    			}
+    			
     		
     				currentProfile.setImage(image);
     				canvas.displayProfile(currentProfile);
     				canvas.showMessage("The picture for " +currentProfile.getName() + " has been set to " + file.toString());
     				pictureField.setName(file.toString());
-    			
+    			}
     
     		}else{
     			canvas.showMessage("Select a profile by Adding or Looking up a name before changing a user's picture.");
