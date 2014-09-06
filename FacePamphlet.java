@@ -125,8 +125,11 @@ public class FacePamphlet extends Program
     			currentProfile = existingProfile;
     			canvas.displayProfile(currentProfile);
     			canvas.showMessage("Displaying " + currentProfile.getName());
-    			pictureField.setText(currentProfile.getImage().toString());
-    			
+    			if(currentProfile.getImage() == null){
+    				pictureField.setText("No Image");
+    			}else{
+    			pictureField.setText(currentProfile.getShortFileName());
+    			}
     		}else{
     			canvas.removeProfile();
     			canvas.showMessage("Profile with the name "+ "\"" + nameText + "\"" + " doesn't exist.");
@@ -169,9 +172,10 @@ public class FacePamphlet extends Program
     				}
     				currentProfile.setImage(image);
     				canvas.displayProfile(currentProfile);
-    				String shortFileName = file.toString();
+    				shortFileName = file.toString();
     				shortFileName = shortFileName.substring(file.toString().lastIndexOf("/") + 1);
     				pictureField.setText(shortFileName);
+    				currentProfile.setShortFileName(shortFileName);
     				canvas.showMessage("The picture for " +currentProfile.getName() + " has been set to " + shortFileName);
     			}
     
@@ -232,5 +236,6 @@ public class FacePamphlet extends Program
 	private FacePamphletDatabase database;
 	private FacePamphletProfile currentProfile;
 	
+	private String shortFileName;
 	private File file;
 }
