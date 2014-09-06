@@ -44,8 +44,8 @@ public class FacePamphlet extends Program
 		add(new JLabel(EMPTY_LABEL_TEXT), WEST);
 		
 		//Adds picture button and label to the left of the window
-		pictureField = new JLabel("No Image", JLabel.CENTER);
-		add(pictureField, WEST);
+		pictureField = new JLabel("No Image");
+		add(pictureField, WEST, JLabel.CENTER_ALIGNMENT);
 		ChangePicture = new JButton("Change Picture");
 		add(ChangePicture, WEST);
 		add(new JLabel(EMPTY_LABEL_TEXT), WEST);
@@ -92,6 +92,7 @@ public class FacePamphlet extends Program
     			canvas.displayProfile(currentProfile);
     			canvas.showMessage("A new profile was added: " + newProfile.getName());
     			pictureField.setText(currentProfile.getShortFileName());
+    			
     			
     		
     		}else{
