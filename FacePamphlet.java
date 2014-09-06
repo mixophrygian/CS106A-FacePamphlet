@@ -111,6 +111,7 @@ public class FacePamphlet extends Program
     			canvas.removeProfile();
     			canvas.showMessage("This profile was deleted: " + nameText);
     			currentProfile = null;
+    			pictureField.setText("No Image");
     		}else{
     			
     			canvas.showMessage("The profile " + "\"" +nameText+ "\"" + " couldn't be deleted because it doesn't exist.");
