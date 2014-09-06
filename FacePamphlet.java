@@ -45,7 +45,7 @@ public class FacePamphlet extends Program
 		
 		//Adds picture button and label to the left of the window
 		pictureField = new JLabel("No Image");
-		pictureField.setAlignmentX(SwingConstants.CENTER);
+		pictureField.setAlignmentY(SwingConstants.CENTER);
 		add(pictureField, WEST);
 		ChangePicture = new JButton("Change Picture");
 		add(ChangePicture, WEST);
