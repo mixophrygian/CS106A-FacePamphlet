@@ -159,13 +159,8 @@ public class FacePamphlet extends Program
     				try{
     					file = chooser.getSelectedFile();
     					rd = new BufferedReader(new FileReader(file));
-    					try   
-    				    {  
-    				        image = new GImage(""+file+"");     
-    				    } catch (IOException ex) {
-    				    	canvas.showMessage("That file name won't work.  Make sure you spelled it right?");
-    				    }  
-    				                
+    					image = new GImage(""+file+"");     
+    				              
     				}catch (IOException ex){
     					canvas.showMessage("That file name won't work.  Make sure you spelled it right?");
     				}
