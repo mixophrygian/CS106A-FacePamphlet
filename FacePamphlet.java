@@ -91,7 +91,7 @@ public class FacePamphlet extends Program
     			database.addProfile(newProfile);
     			canvas.displayProfile(currentProfile);
     			canvas.showMessage("A new profile was added: " + newProfile.getName());
-    			pictureField.setText("No Image");
+    			pictureField.setText(currentProfile.getShortFileName());
     			
     		
     		}else{
