@@ -152,11 +152,12 @@ public class FacePamphlet extends Program
     			BufferedReader rd = null;
     			JFileChooser chooser = new JFileChooser();
     			 FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG & GIF Images", "jpg", "gif");
-    			 chooser.setFileFilter(filter);      
+    			 chooser.setFileFilter(filter); 
+    			 
     			int result = chooser.showOpenDialog(this);
     			if(result == JFileChooser.APPROVE_OPTION){
     				try{
-    					File file = chooser.getSelectedFile();
+    					file = chooser.getSelectedFile();
     					rd = new BufferedReader(new FileReader(file));
     					try   
     				    {  
@@ -169,17 +170,17 @@ public class FacePamphlet extends Program
     					canvas.showMessage("That file name won't work.  Make sure you spelled it right?");
     				}
     			}
-    				
+    		
     				currentProfile.setImage(image);
     				canvas.displayProfile(currentProfile);
-    				canvas.showMessage("The picture for " +currentProfile.getName() + " has been set to " +pictureFileName);
+    				canvas.showMessage("The picture for " +currentProfile.getName() + " has been set to " + file.toString());
     			
     
     		}else{
     			canvas.showMessage("Select a profile by Adding or Looking up a name before changing a user's picture.");
     		}
     		
-    	}
+    	
     	
     	//Adding a friend to a current profile, if any//
     	if(source == friendField && !friendField.getText().equals("") || source == AddFriend){
@@ -231,4 +232,6 @@ public class FacePamphlet extends Program
 	private FacePamphletCanvas canvas = new FacePamphletCanvas();;
 	private FacePamphletDatabase database;
 	private FacePamphletProfile currentProfile;
+	
+	private File file;
 }
