@@ -91,6 +91,7 @@ public class FacePamphlet extends Program
     			database.addProfile(newProfile);
     			canvas.displayProfile(currentProfile);
     			canvas.showMessage("A new profile was added: " + newProfile.getName());
+    			pictureField.setText("No Image");
     			
     		
     		}else{
@@ -98,6 +99,7 @@ public class FacePamphlet extends Program
     			currentProfile = existingProfile;
     			canvas.displayProfile(currentProfile);
     			canvas.showMessage("That profile already exists! It is currently displayed." );
+    			pictureField.setText(currentProfile.getImage().toString());
     		}
     	}
     	
@@ -112,6 +114,7 @@ public class FacePamphlet extends Program
     			
     			canvas.showMessage("The profile " + "\"" +nameText+ "\"" + " couldn't be deleted because it doesn't exist.");
     			currentProfile = null;
+    			pictureField.setText("No Image");
     		}
     	}
     	
