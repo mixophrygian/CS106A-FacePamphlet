@@ -146,7 +146,6 @@ public class FacePamphlet extends Program
     	
     	//Changing the profile picture of a current profile, if any//
     	if(source == ChangePicture){
-    		//String pictureFileName = pictureField.getText();
     		if(currentProfile != null){
     			GImage image = null;
     			BufferedReader rd = null;
