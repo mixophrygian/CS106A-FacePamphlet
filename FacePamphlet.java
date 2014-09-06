@@ -41,8 +41,7 @@ public class FacePamphlet extends Program
 		add(new JLabel(EMPTY_LABEL_TEXT), WEST);
 		
 		//Adds picture field to the left of the window//
-		pictureField = new JTextField(TEXT_FIELD_SIZE);
-		pictureField.addActionListener(this);
+		pictureField = new JLabel("No Image");
 		add(pictureField, WEST);
 		ChangePicture = new JButton("Change Picture");
 		add(ChangePicture, WEST);
@@ -203,7 +202,7 @@ public class FacePamphlet extends Program
 	private JButton Lookup;
 	
 	private JTextField statusField;
-	private JTextField pictureField;
+	private JLabel pictureField;
 	private JTextField friendField;
 	private JButton ChangeStatus;
 	private JButton ChangePicture;
