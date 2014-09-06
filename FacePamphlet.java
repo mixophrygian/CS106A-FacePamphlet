@@ -119,7 +119,7 @@ public class FacePamphlet extends Program
     			FacePamphletProfile existingProfile = database.getProfile(nameText);
     			currentProfile = existingProfile;
     			canvas.displayProfile(currentProfile);
-    			canvas.showMessage("Look up: " + currentProfile.toString());
+    			canvas.showMessage("Displaying " + currentProfile.getName());
     			
     		}else{
     			canvas.removeProfile();
