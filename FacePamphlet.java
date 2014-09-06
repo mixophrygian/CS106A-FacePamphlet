@@ -99,7 +99,7 @@ public class FacePamphlet extends Program
     			currentProfile = existingProfile;
     			canvas.displayProfile(currentProfile);
     			canvas.showMessage("That profile already exists! It is currently displayed." );
-    			pictureField.setText(currentProfile.getImage().toString());
+    			pictureField.setText(currentProfile.getShortFileName());
     		}
     	}
     	
