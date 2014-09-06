@@ -26,6 +26,7 @@ public class FacePamphletProfile implements FacePamphletConstants {
 		status = null;
 		friendsList = new ArrayList<String>();
 		profilePicture = null;
+		shortProfilePictureName = "No Image";
 	}
 
 	/** This method returns the name associated with the profile. */ 
@@ -43,6 +44,22 @@ public class FacePamphletProfile implements FacePamphletConstants {
 		}else{
 		return profilePicture;
 	}
+	}
+	
+	/**This method gets the name of the profile picture being used.  The default is "No Image"
+	 *
+	 */
+	public String getShortFileName(){
+		return shortProfilePictureName;
+	}
+	
+	/**This method sets the name of the profile picture being used.  The default is "No Image"
+	 * @param string
+	 * @return
+	 */
+	public String setShortFileName(String string){
+		shortProfilePictureName = string;
+		return shortProfilePictureName;
 	}
 
 	/** This method sets the image associated with the profile. */ 
@@ -148,4 +165,5 @@ public class FacePamphletProfile implements FacePamphletConstants {
 	private String status;
 	private GImage profilePicture;
 	private ArrayList<String> friendsList;
+	private String shortProfilePictureName;
 }
