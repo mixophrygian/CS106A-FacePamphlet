@@ -122,6 +122,7 @@ public class FacePamphlet extends Program
     			currentProfile = existingProfile;
     			canvas.displayProfile(currentProfile);
     			canvas.showMessage("Displaying " + currentProfile.getName());
+    			pictureField.setText(currentProfile.getImage().toString());
     			
     		}else{
     			canvas.removeProfile();
