@@ -92,6 +92,7 @@ public class FacePamphlet extends Program
     			canvas.displayProfile(currentProfile);
     			canvas.showMessage("A new profile was added: " + newProfile.getName());
     			pictureField.setText(currentProfile.getShortFileName());
+    			statusField.setText("");
     			
     			
     		
@@ -101,6 +102,7 @@ public class FacePamphlet extends Program
     			canvas.displayProfile(currentProfile);
     			canvas.showMessage("That profile already exists! It is currently displayed." );
     			pictureField.setText(currentProfile.getShortFileName());
+    			statusField.setText("");
     		}
     	}
     	
@@ -118,6 +120,7 @@ public class FacePamphlet extends Program
     			canvas.showMessage("The profile " + "\"" +nameText+ "\"" + " couldn't be deleted because it doesn't exist.");
     			currentProfile = null;
     			pictureField.setText("No Image");
+    			statusField.setText("");
     		}
     	}
     	
@@ -127,7 +130,9 @@ public class FacePamphlet extends Program
     			FacePamphletProfile existingProfile = database.getProfile(nameText);
     			currentProfile = existingProfile;
     			canvas.displayProfile(currentProfile);
+    			statusField.setText("");
     			canvas.showMessage("Displaying " + currentProfile.getName());
+    			
     			if(currentProfile.getImage() == null){
     				pictureField.setText("No Image");
     			}else{
@@ -137,6 +142,7 @@ public class FacePamphlet extends Program
     			canvas.removeProfile();
     			canvas.showMessage("Profile with the name "+ "\"" + nameText + "\"" + " doesn't exist.");
     			currentProfile = null;
+    			statusField.setText("");
     		}
     		
     	}
